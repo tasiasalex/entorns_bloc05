@@ -1,4 +1,3 @@
-import pandas as pd
 def llibres_per_categoria(biblioteca, categoria):
     """
     Nom de la funció: 
