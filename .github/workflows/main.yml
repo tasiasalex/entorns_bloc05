@@ -1,0 +1,27 @@
+name: Executar prova_escrita5
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+        
+    - name: Execute prova_escrita5
+      run: |
+        cd bloc5
+        python prova_escrita5.py
+        echo "----------------------------------"
+        echo "Output del script:"
+        cat prova_escrita5.py | grep "print(" -A 1
